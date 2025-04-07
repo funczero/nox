@@ -1,0 +1,29 @@
+# Ignora dependências
+node_modules/
+
+# Ignora builds
+dist/
+build/
+
+# Ignora variáveis de ambiente (seus tokens, client IDs, etc)
+.env
+
+# Ignora logs
+logs/
+*.log
+npm-debug.log*
+
+# Ignora cache do sistema
+.DS_Store
+*.swp
+*.swo
+
+# Ignora arquivos do TypeScript que não são usados diretamente
+*.tsbuildinfo
+
+# Ignora IDEs
+.vscode/
+.idea/
+
+# Ignora arquivos gerados pelo sistema operacional
+Thumbs.db
