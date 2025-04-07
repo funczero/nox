@@ -22,14 +22,14 @@ export const registerCommands = async () => {
   const rest = new REST({ version: '10' }).setToken(process.env.TOKEN!);
 
   try {
-    logger.info('🔁 Atualizando comandos de barra...');
+    logger.info('Atualizando comandos de barra...');
 
     await rest.put(
       Routes.applicationGuildCommands(process.env.CLIENT_ID!, process.env.GUILD_ID!),
       { body: commands }
     );
 
-    logger.success('✅ Comandos registrados com sucesso!');
+    logger.success('Comandos registrados com sucesso!');
   } catch (err) {
     logger.error(`Erro ao registrar comandos: ${err}`);
   }

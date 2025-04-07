@@ -7,7 +7,9 @@ import 'dayjs/locale/pt-br.js';
 dayjs.extend(duration);
 dayjs.extend(utc);
 dayjs.extend(timezone);
+
 dayjs.locale('pt-br');
+
 dayjs.tz.setDefault('America/Sao_Paulo');
 
 export default dayjs;
