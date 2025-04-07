@@ -3,8 +3,8 @@ import {
   ChatInputCommandInteraction,
   EmbedBuilder,
 } from 'discord.js';
-import { Command } from '../../types/command';
-import { formatDate } from '../../utils/formatDate';
+import { Command } from '../../types/command.js';
+import { formatDate } from '../../utils/formatDate.js';
 
 const userInfoCommand: Command = {
   data: new SlashCommandBuilder()
@@ -13,7 +13,6 @@ const userInfoCommand: Command = {
 
   async execute(interaction: ChatInputCommandInteraction) {
     const user = interaction.user;
-    const member = interaction.member;
 
     const embed = new EmbedBuilder()
       .setTitle('👤 Informações do Usuário')

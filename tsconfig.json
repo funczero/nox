@@ -1,21 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "node",
-    "lib": ["ES2022", "DOM"],
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true,
-    "outDir": "dist",
-    "baseUrl": "./",
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "types": ["node"]
+    "target": "ES2022", // Define o alvo como ES2022
+    "module": "nodenext", // Usa "nodenext" para compatibilidade com Node.js
+    "moduleResolution": "nodenext", // Deve ser "nodenext" para corresponder ao módulo
+    "lib": ["ES2022", "DOM"], // Inclui bibliotecas modernas e DOM
+    "esModuleInterop": true, // Permite interoperabilidade com CommonJS
+    "forceConsistentCasingInFileNames": true, // Garante consistência em nomes de arquivos
+    "strict": true, // Ativa todas as verificações estritas
+    "skipLibCheck": true, // Ignora verificações de tipo em arquivos de declaração
+    "outDir": "dist", // Diretório de saída para arquivos compilados
+    "baseUrl": "./", // Base para resolução de caminhos
+    "resolveJsonModule": true, // Permite importar arquivos JSON
+    "noEmit": false, // Permite a emissão de arquivos compilados
+    "types": ["node"] // Inclui os tipos do Node.js
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src"], // Inclui apenas a pasta "src" no projeto
+  "exclude": ["node_modules", "dist"] // Exclui "node_modules" e "dist"
 }
-
-  

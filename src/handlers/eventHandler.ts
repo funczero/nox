@@ -1,15 +1,15 @@
-import { Client } from 'discord.js';
+import { Client, ClientEvents } from 'discord.js';
 import { readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
-import { logger } from '../utils/logger';
+import { logger } from '../utils/logger.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-interface Event {
-  name: string;
+interface Event<K extends keyof ClientEvents> {
+  name: K;
   once?: boolean;
-  execute: (...args: any[]) => void;
+  execute: (...args: ClientEvents[K]) => void;
 }
 
 export const handleEvents = async (client: Client): Promise<void> => {
@@ -20,7 +20,7 @@ export const handleEvents = async (client: Client): Promise<void> => {
     const filePath = join(eventsPath, file);
 
     try {
-      const { default: event }: { default: Event } = await import(pathToFileURL(filePath).toString());
+      const { default: event }: { default: Event<keyof ClientEvents> } = await import(pathToFileURL(filePath).toString());
 
       if (!event?.name || typeof event.execute !== 'function') {
         logger.warn(`❌ Estrutura inválida no evento: ${file}`);
