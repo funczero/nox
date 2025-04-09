@@ -1,10 +1,10 @@
 import { Client, GatewayIntentBits, Partials, Collection } from 'discord.js';
 import 'dotenv/config';
-import { handleEvents } from './handlers/eventHandler';
-import { handleCommands } from './handlers/commandHandler';
-import { logger } from './utils/logger';
-import { validateEnv } from './config/env';
-import type { Command } from './types/command';
+import { handleEvents } from './handlers/eventHandler.js';
+import { handleCommands } from './handlers/commandHandler.js';
+import { logger } from './utils/logger.js';
+import { validateEnv } from './config/env.js';
+import type { Command } from './types/command.js';
 
 validateEnv();
 
