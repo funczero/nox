@@ -10,7 +10,7 @@ export default {
       status: 'dnd', 
       activities: [
         {
-          name: 'Assistindo comandos serem executados! 🚀',
+          name: 'Func ...',
           type: ActivityType.Watching,
         },
       ],
